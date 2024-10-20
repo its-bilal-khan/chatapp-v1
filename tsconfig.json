@@ -1,27 +1,46 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
+    "alwaysStrict": true,
     "strict": true,
     "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "incremental": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "strictNullChecks": true,           // Ensures that null and undefined are checked
+    "strictFunctionTypes": true,        // Checks function parameter types more strictly
+    "target": "esnext",                   // Or whatever target you need
+    "module": "commonjs",                 // Set the module system
+    "strict": true,                        // Enable all strict type-checking options
+    "noImplicitAny": true,                 // Ensure that no variable has an implicit 'any' type
+    "strictPropertyInitialization": true,  // Ensure class properties are initialized
+    "esModuleInterop": true,               // Enable compatibility with ES modules
+    "skipLibCheck": true   
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "baseUrl": "src/",
     "paths": {
-      "@/*": ["./src/*"]
+      "@common/*": ["components/common/*"],
+      "@chat/*": ["components/chat/*"],
+      "@chatV2/*": ["components/chat-v2/*"],
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@png/*": ["assets/images/png/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

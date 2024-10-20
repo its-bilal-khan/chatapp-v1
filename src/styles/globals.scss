@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --panel-header-background: #f0f2f5;
+  --foreground-rgb: 255, 255, 255;
+  --panel-header-icon: #54656f;
+  --menu-bar-item-background-active: rgba(11, 20, 26, 0.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --app-background: #0c1317;
+    --app-background-deeper: #0a1014;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+    --background-default-rgb: 17, 27, 33;
+    --background-default: #111b21;
+    --background-default-active: #2a3942;
+    --background-default-active-rgb: 42, 57, 66;
+    --background-default-hover: #202c33;
+    --background-default-hover-rgb: 32, 44, 51;
+    --chat-left-header-height: 59px;
+    --foreground-rgb: 0, 0, 0;
+    --menu-bar-item-background-active: hsla(0, 0%, 100%, 0.1);
+    --primary: #d1d7db;
+    --primary-rgb: 209, 215, 219;
+    --primary-strong: #e9edef;
+    --primary-strong-rgb: 233, 237, 239;
+    --primary-stronger: rgba(233, 237, 239, 0.88);
+    --primary-stronger-rgb: 233, 237, 239;
+    --primary-strongest: #e9edef;
+    --primary-strongest-rgb: 233, 237, 239;
+    --primary-title: rgba(233, 237, 239, 0.88);
+    --primary-title-rgb: 233, 237, 239;
+    --panel-header-icon: #aebac1;
+    --panel-header-background: #202c33;
+    --search-input-container-background: #111b21;
+    --text-teal: #00a884;
+    --text-teal-rgb: 0, 168, 132;
+    --text-success: #71eb85;
+    --text-success-rgb: 113, 235, 133;
+    --text-critical: #f15c6d;
+    --text-critical-rgb: 241, 92, 109;
+  }
+}
+
+@layer components {
+  .icon-container {
+    @apply transition-colors min-w-[40px] min-h-[40px] rounded-full flex justify-center items-center active:bg-[var(--menu-bar-item-background-active)] cursor-pointer text-[color:var(--panel-header-icon)];
+  }
+
+  .icon-selected {
+    @apply bg-[var(--menu-bar-item-background-active)];
+  }
+}
+@layer utilities {
+  .chat-sidebar-rows {
+    grid-template-rows: auto 1fr;
+  }
+}

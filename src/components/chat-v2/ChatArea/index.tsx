@@ -1,0 +1,1 @@
+export * from '@chatV2/ChatArea/ChatArea'
